@@ -1,29 +1,29 @@
-// Mock data for Chris Mauki
+// Mock data for Emmanuel Akyoo
 export const speaker = {
   id: 1,
-  name: "Chris Mauki",
-  title: "Motivational Speaker, Social & Relationship Psychology Expert, Professional Counselor & Author",
-  bio: "Chris Mauki is a distinguished motivational speaker and relationship psychology expert with extensive experience in counseling and personal development. As a published author and inspirational figure, he has guided thousands through transformative life changes and relationship growth.",
-  image: "/mauki.jpg",
+  name: "Emmanuel Akyoo",
+  title: "Digital Creator, Entrepreneur, Author & Life Coach",
+  bio: "Emmanuel Akyoo is a distinguished digital creator and entrepreneur with over 28K followers. As Chief Creator at Entrepreneur and Director at Life Improvement & Mastery Project, he has dedicated his life to helping others achieve personal mastery and business success. A published author, father of 2, and believer, Emmanuel combines practical business wisdom with life transformation principles to guide thousands toward their full potential.",
+  image: "/akyoo.jpg",
   rating: 5.0,
-  totalSpeaks: 312,
-  followers: 253000,
-  email: "info@chrismauki.com",
-  phone: "+255 (0) 754-123-456",
-  website: "www.chrismauki.com",
-  specialties: ["Relationship Psychology", "Personal Motivation", "Life Coaching", "Social Dynamics"],
+  totalSpeaks: 187,
+  followers: 28000,
+  email: "info@emmanuelakyoo.com",
+  phone: "+255 (0) 754-789-123",
+  website: "www.emmanuelakyoo.com",
+  specialties: ["Entrepreneurship", "Life Mastery", "Digital Creation", "Personal Development"],
   testimonials: [
     {
-      text: "Chris alibadilisha kabisa mtazamo wangu kuhusu ndoa. Mafundisho yake yamenisaidia kujenga mahusiano imara na mume wangu. Asante sana!",
-      author: "Fatuma M., Mama wa watoto 3"
+      text: "Emmanuel amenibadilisha kutoka mtu wa kawaida kuwa mjasiriamali mwenye mafanikio. Mafundisho yake ya uongozi na biashara yameniongoza kukuza kampuni yangu.",
+      author: "Amina J., Mwanzilishi wa Biashara"
     },
     {
-      text: "Baada ya kusikiliza Chris, ndoa yangu imeanza upya. Tumejifunza jinsi ya kuongea na kutatua matatizo bila kupigana.",
-      author: "Hassan K., Mfanyabiashara"
+      text: "Kwa msaada wa Emmanuel, nimejifunza jinsi ya kujenga maisha yangu na kufikia malengo yangu. Yeye ni mwalimu wa kweli wa maisha.",
+      author: "John M., Mtaalamu wa Teknolojia"
     },
     {
-      text: "Mafundisho ya Chris kuhusu mapenzi na uvumilivu yameokoa ndoa yangu. Sasa tunaishi kwa furaha na amani nyumbani.",
-      author: "Grace S., Muuguzi"
+      text: "Mafundisho ya Emmanuel kuhusu maendeleo ya kibinafsi yameniwezesha kuwa mzazi bora na mjasiriamali mwenye mafanikio.",
+      author: "Sarah K., Mama Mjasiriamali"
     }
   ]
 };
@@ -31,8 +31,8 @@ export const speaker = {
 export const events = [
   {
     id: 1,
-    title: "Mahusiano Endelevu: Msingi wa Ndoa Yenye Furaha",
-    description: "Jifunze jinsi ya kujenga mahusiano imara ya ndoa na kutunza upendo kwa miaka mingi. Mazungumzo ya kina kuhusu changamoto za ndoa na ufumbuzi wake.",
+    title: "Ujasiriamali wa Kisasa: Kuanza Biashara Yenye Mafanikio",
+    description: "Jifunze jinsi ya kuanzisha na kuendesha biashara yenye mafanikio katika mazingira ya kisasa. Mazungumzo ya kina kuhusu changamoto za ujasiriamali na jinsi ya kuzishinda.",
     date: "2024-06-22",
     time: "15:30",
     duration: "3 masaa",
@@ -40,12 +40,12 @@ export const events = [
     price: 120,
     capacity: 180,
     registered: 156,
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=400&h=250&fit=crop"
+    image: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=250&fit=crop"
   },
   {
     id: 2,
-    title: "Mapenzi na Heshima: Ufunguo wa Uhusiano Mzuri",
-    description: "Elewa jinsi ya kuonyesha upendo na heshima kwa mwenzi wako. Jifunze mbinu za kutatua migogoro na kuimarisha uongozi katika familia.",
+    title: "Uongozi wa Maisha: Kujenga Malengo na Kufikia Mafanikio",
+    description: "Elewa jinsi ya kuongoza maisha yako kuelekea mafanikio. Jifunza mbinu za kuweka malengo, kudumisha motisha na kujenga utaratibu wa maisha yenye maana.",
     date: "2024-07-28",
     time: "10:30",
     duration: "4 masaa",
@@ -57,8 +57,8 @@ export const events = [
   },
   {
     id: 3,
-    title: "Utayarishaji wa Ndoa: Hatua Muhimu za Kabla ya Harusi",
-    description: "Mazungumzo makubwa kwa wachanga wanaotayarisha ndoa. Jifunze kuhusu mawasiliano, fedha, familia na malengo ya pamoja katika ndoa.",
+    title: "Digital Marketing na Uongozi wa Mtandao",
+    description: "Mazungumzo makubwa kuhusu jinsi ya kutumia mitandao ya kijamii na teknolojia za kisasa kujenga biashara yako na kuongeza wateja.",
     date: "2024-08-18",
     time: "09:00",
     duration: "5 masaa",
@@ -66,12 +66,12 @@ export const events = [
     price: 85,
     capacity: 140,
     registered: 112,
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop"
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop"
   },
   {
     id: 4,
-    title: "Kurekebisha Mahusiano: Njia za Kurudi Kwenye Upendo",
-    description: "Kwa wale waliopoteza moto wa mapenzi katika ndoa zao. Jifunze jinsi ya kuzindua upya ushirikiano, mawasiliano na furaha katika ndoa.",
+    title: "Uongozi wa Familia na Biashara: Mazingira ya Kufanikiwa",
+    description: "Kwa wazazi wajasiriamali - jifunze jinsi ya kuwa mzazi mzuri na mjasiriamali mwenye mafanikio bila kupoteza muda wa familia.",
     date: "2024-09-14",
     time: "13:00",
     duration: "3.5 masaa",
@@ -79,6 +79,6 @@ export const events = [
     price: 70,
     capacity: 200,
     registered: 143,
-    image: "https://images.unsplash.com/photo-1559523161-0fc0d8b38a7a?w=400&h=250&fit=crop"
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop"
   }
 ];
