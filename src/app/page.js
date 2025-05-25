@@ -9,6 +9,7 @@ import { Card } from '@/components/ui/Card';
 import { SpeakerBio } from '@/components/speaker/SpeakerBio';
 import { ContactInfo } from '@/components/speaker/ContactInfo';
 import { SpecialtiesList } from '@/components/speaker/Specialties';
+import  ServiceOverview  from '@/components/services/index';
 import { CompanyHeader as SpeakerHeader } from '@/components/speaker/SpeakerHeader';
 import { TestimonialsSection } from '@/components/speaker/TestimonialSection';  
 import { EventsList } from '@/components/events/EventList';
@@ -189,6 +190,7 @@ const Main = () => {
         <>
          <ProfileBanner speaker={speaker} language={language}/>
         <PartnersShowcase />
+        <ServiceOverview />
         </>
        
       )}

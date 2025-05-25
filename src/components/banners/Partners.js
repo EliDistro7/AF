@@ -24,7 +24,9 @@ const translations = {
     cybersecurity: 'Cybersecurity',
     aiSolutions: 'AI Solutions',
     blockchainTech: 'Blockchain Tech',
-    years: 'Years'
+    years: 'Years',
+    teamCollaboration: 'Building Success Through Partnership',
+    teamCollaborationDescription: 'Our dedicated team works closely with partners to deliver exceptional results that drive business growth and innovation.'
   },
   sw: {
     trustedBy: 'Tunaminiwa na Viongozi wa Tasnia',
@@ -37,7 +39,7 @@ const translations = {
     partnerNetworkDescription: 'Makampuni yanayotuamini kutoa suluhisho za ubunifu',
     readyToJoin: 'Uko Tayari Kujiunga na Hadithi Zetu za Mafanikio?',
     readyToJoinDescription: 'Hebu tujadili jinsi tuwezavyo kusaidia biashara yako kufikia malengo yake kwa uzoefu wetu uliojaribiwa.',
-    startProject: 'Anza Mradi Wako',
+    startProject: 'Anza Nasi Leo',
     digitalTransformation: 'Mabadiliko ya Kidijitali',
     financialSolutions: 'Suluhisho za Kifedha',
     innovationHub: 'Kituo cha Ubunifu',
@@ -46,7 +48,9 @@ const translations = {
     cybersecurity: 'Ulinzi wa Mtandao',
     aiSolutions: 'Suluhisho za AI',
     blockchainTech: 'Teknolojia ya Blockchain',
-    years: 'Miaka'
+    years: 'Miaka',
+    teamCollaboration: 'Kujenga Mafanikio Kupitia Ushirikiano',
+    teamCollaborationDescription: 'Timu yetu iliyojitolea inafanya kazi kwa karibu na washirika kutoa matokeo ya kipekee yanayoongoza ukuaji wa biashara na ubunifu.'
   }
 };
 
@@ -128,11 +132,81 @@ const PartnersShowcase = () => {
           ))}
         </motion.div>
 
-        {/* Partners Section Header */}
+        {/* Photo Section - Team Collaboration */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.4 }}
+          className="mb-20"
+        >
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Photo Container */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="relative group"
+            >
+              <div className="relative overflow-hidden rounded-2xl shadow-corporate-lg group-hover:shadow-corporate-xl transition-all duration-300">
+                {/* Photo Placeholder - Replace with your actual image */}
+               <img 
+                  src="/partners.jpg" 
+                  alt="Team collaboration" 
+                  className="w-full h-full object-cover"
+                />
+                
+                {/* Optional: Uncomment and modify this section to use an actual image */}
+              
+              
+              
+                
+                {/* Overlay gradient for better text readability if needed */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
+              
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-accent-500/20 rounded-full blur-xl" />
+              <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-primary-500/20 rounded-full blur-xl" />
+            </motion.div>
+
+            {/* Content */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={inView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="space-y-6"
+            >
+              <h3 className="text-3xl lg:text-4xl font-bold text-text-primary">
+                {t.teamCollaboration}
+              </h3>
+              <p className="text-lg text-text-secondary leading-relaxed">
+                {t.teamCollaborationDescription}
+              </p>
+              
+              {/* Additional features or benefits */}
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-primary-500 rounded-full" />
+                  <span className="text-text-secondary">Collaborative approach to every project</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-accent-500 rounded-full" />
+                  <span className="text-text-secondary">Dedicated support throughout the process</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-2 h-2 bg-primary-500 rounded-full" />
+                  <span className="text-text-secondary">Proven track record of success</span>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
+
+        {/* Partners Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.7 }}
           className="text-center mb-12"
         >
           <h3 className="text-2xl lg:text-3xl font-bold text-text-primary mb-4">
@@ -147,7 +221,7 @@ const PartnersShowcase = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 1, delay: 0.6 }}
+          transition={{ duration: 1, delay: 0.8 }}
           className="relative overflow-hidden"
         >
           {/* Gradient overlays for smooth edges */}
@@ -198,7 +272,7 @@ const PartnersShowcase = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          transition={{ duration: 0.8, delay: 1.0 }}
           className="text-center mt-16"
         >
           <div className="bg-background-primary/50 backdrop-blur-md border border-corporate/30 rounded-2xl p-8 max-w-2xl mx-auto shadow-corporate-lg">
