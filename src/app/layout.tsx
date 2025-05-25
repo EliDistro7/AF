@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Libre_Baskerville } from "next/font/google";
 import "./globals.css";
 import { motion } from 'framer-motion';
+import Footer from "@/components/layout/Footer";
 
 // Import your LanguageProvider
 import { LanguageProvider } from "@/contexts/language";
@@ -80,6 +81,8 @@ export default function RootLayout({
         <EnhancedBackground />
         <LanguageProvider>
           {children}
+
+          <Footer />
         </LanguageProvider>
       </body>
     </html>
