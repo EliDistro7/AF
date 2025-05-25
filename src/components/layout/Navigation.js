@@ -16,6 +16,8 @@ import {
   ArrowRight
 } from 'lucide-react';
 
+import Link from 'next/link';
+
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
