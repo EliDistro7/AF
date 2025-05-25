@@ -26,3 +26,215 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* Add these keyframes to your globals.css file */
+
+@keyframes float-1 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(50px, -30px) scale(1.1);
+  }
+  50% {
+    transform: translate(-50px, 30px) scale(0.9);
+  }
+  75% {
+    transform: translate(25px, -15px) scale(1.05);
+  }
+}
+
+@keyframes float-2 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  20% {
+    transform: translate(-30px, 50px) scale(0.8);
+  }
+  60% {
+    transform: translate(30px, -30px) scale(1.2);
+  }
+  80% {
+    transform: translate(-15px, 25px) scale(0.95);
+  }
+}
+
+@keyframes float-3 {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(40px, -20px) scale(1.3);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.7);
+  }
+}
+
+/* Optional: Add some subtle backdrop blur for better text readability */
+.content-overlay {
+  backdrop-filter: blur(0.5px);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+
+/* Add these utilities to your globals.css for better readability */
+
+/* Text shadow utilities */
+.text-shadow-sm {
+  text-shadow: 0 1px 2px rgba(15, 23, 42, 0.5);
+}
+
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(15, 23, 42, 0.5);
+}
+
+.text-shadow-lg {
+  text-shadow: 0 4px 8px rgba(15, 23, 42, 0.6);
+}
+
+.text-shadow-xl {
+  text-shadow: 0 6px 12px rgba(15, 23, 42, 0.7);
+}
+
+.text-shadow-none {
+  text-shadow: none;
+}
+
+/* Glass morphism utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-light {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Enhanced text contrast utilities */
+.text-high-contrast {
+  color: #0f172a;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+}
+
+.text-medium-contrast {
+  color: #1e293b;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+/* Content overlay for better readability */
+.content-overlay {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.content-overlay-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+}
+
+.content-overlay-strong {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+}
+
+/* Enhanced button styles for better visibility */
+.btn-primary-enhanced {
+  background: linear-gradient(135deg, #0066cc 0%, #004485 100%);
+  color: white;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.1), 0 2px 4px -1px rgba(15, 23, 42, 0.06);
+  transition: all 0.3s ease;
+}
+
+.btn-primary-enhanced:hover {
+  background: linear-gradient(135deg, #004485 0%, #003366 100%);
+  box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -2px rgba(15, 23, 42, 0.05);
+  transform: translateY(-1px);
+}
+
+/* Enhanced navigation styles */
+.nav-enhanced {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(186, 224, 255, 0.3);
+  box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.05);
+}
+
+.nav-link-enhanced {
+  color: #1e293b;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.nav-link-enhanced:hover {
+  color: #0066cc;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.9);
+}
+
+/* Card styles with enhanced contrast */
+.card-enhanced {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  transition: all 0.3s ease;
+}
+
+.card-enhanced:hover {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 25px 45px 0 rgba(31, 38, 135, 0.25);
+  transform: translateY(-2px);
+}
+
+/* Typography enhancements for better readability */
+.heading-enhanced {
+  color: #0f172a;
+  font-weight: 800;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+  letter-spacing: -0.025em;
+}
+
+.subheading-enhanced {
+  color: #1e293b;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.6);
+}
+
+.body-text-enhanced {
+  color: #334155;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.4);
+  line-height: 1.7;
+}
+
+/* Responsive font weights for better mobile readability */
+@media (max-width: 768px) {
+  .heading-enhanced {
+    font-weight: 900;
+    text-shadow: 0 3px 6px rgba(255, 255, 255, 0.9);
+  }
+  
+  .subheading-enhanced {
+    font-weight: 800;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.7);
+  }
+  
+  .body-text-enhanced {
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.5);
+  }
+}
