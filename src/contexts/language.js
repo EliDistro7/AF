@@ -6,7 +6,8 @@ import Cookies from 'js-cookie'
 
 const LanguageContext = createContext({
   language: 'sw',
-  setLanguage: () => {}
+  setLanguage: () => {},
+  toggleLanguage: () => {}
 })
 
 export function LanguageProvider({ children }) {
@@ -23,8 +24,18 @@ export function LanguageProvider({ children }) {
     setLanguage(lang)
   }
 
+  // Toggle function that switches between 'sw' and 'en'
+  const toggleLanguage = () => {
+    const newLang = language === 'sw' ? 'en' : 'sw'
+    updateLanguage(newLang)
+  }
+
   return (
-    <LanguageContext.Provider value={{ language, setLanguage: updateLanguage }}>
+    <LanguageContext.Provider value={{ 
+      language, 
+      setLanguage: updateLanguage,
+      toggleLanguage 
+    }}>
       {children}
     </LanguageContext.Provider>
   )

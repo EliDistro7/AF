@@ -17,6 +17,7 @@ import {
   Sparkles,
   Globe
 } from 'lucide-react';
+import { useLanguage } from '@/contexts/language';
 
 // Mock Link component for demonstration
 const Link = ({ href, children, className, ...props }) => (
@@ -26,16 +27,14 @@ const Link = ({ href, children, className, ...props }) => (
 );
 
 // Mock useLanguage hook for demonstration
-const useLanguage = () => {
-  const [language, setLanguage] = useState('sw');
-  return { language, setLanguage };
-};
+
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [scrolled, setScrolled] = useState(false);
-  const { language, setLanguage } = useLanguage();
+  //const { language1, setLanguage } = useLanguage1();
+   const { language, toggleLanguage } = useLanguage()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -95,7 +94,9 @@ export const Navigation = () => {
   };
 
   const handleLanguageToggle = () => {
-    setLanguage(language === 'en' ? 'sw' : 'en');
+    toggleLanguage();
+    // Optionally, you can add any additional logic here when the language is toggled
+    console.log(`Language switched to: ${language === 'en' ? 'Swahili' : 'English'}`);
   };
 
   const LanguageToggle = ({ className = "" }) => (
