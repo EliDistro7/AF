@@ -12,20 +12,32 @@ export const speaker = {
   phone: "+255 (0) 754-789-123",
   website: "www.emmanuelakyoo.com",
   specialties: ["Entrepreneurship", "Life Mastery", "Digital Creation", "Personal Development"],
-  testimonials: [
-    {
-      text: "Emmanuel amenibadilisha kutoka mtu wa kawaida kuwa mjasiriamali mwenye mafanikio. Mafundisho yake ya uongozi na biashara yameniongoza kukuza kampuni yangu.",
-      author: "Amina J., Mwanzilishi wa Biashara"
-    },
-    {
-      text: "Kwa msaada wa Emmanuel, nimejifunza jinsi ya kujenga maisha yangu na kufikia malengo yangu. Yeye ni mwalimu wa kweli wa maisha.",
-      author: "John M., Mtaalamu wa Teknolojia"
-    },
-    {
-      text: "Mafundisho ya Emmanuel kuhusu maendeleo ya kibinafsi yameniwezesha kuwa mzazi bora na mjasiriamali mwenye mafanikio.",
-      author: "Sarah K., Mama Mjasiriamali"
-    }
-  ]
+testimonials: [
+  {
+    text: "A & F Advisory walinibadilisha kutoka mtu wa kawaida kuwa mjasiriamali mwenye mafanikio. Mafundisho yao ya uongozi na biashara yameniongoza kukuza kampuni yangu na kufikia mafanikio makubwa.",
+    author: "Amina J., Mwanzilishi wa Biashara ya Nguo"
+  },
+  {
+    text: "Kwa msaada wa timu ya A & F Advisory, nimejifunza jinsi ya kujenga biashara yangu ya teknolojia na kufikia malengo yangu ya kifedha. Wao ni washauri wa kweli wa biashara.",
+    author: "John M., Mwanzilishi wa Kampuni ya IT"
+  },
+  {
+    text: "Huduma za ushauri wa kifedha za A & F Advisory zimeniwezesha kuwa mama mjasiriamali mwenye mafanikio. Mpango wao wa biashara umeniongoza vizuri sana.",
+    author: "Sarah K., Mmiliki wa Duka la Mavazi"
+  },
+  {
+    text: "A & F Advisory walinisaidia kupanga ushuru wangu na kukuza biashara yangu ya ujenzi. Mtaalamu wao wa ushuru ni bora sana na mwaminifu.",
+    author: "Ibrahim H., Mkandarasi wa Ujenzi"
+  },
+  {
+    text: "Mafunzo ya ujuzi kutoka A & F Advisory yamebadilisha maisha yangu. Sasa nina ujuzi wa kutosha wa uongozi na biashara za kisasa.",
+    author: "Grace L., Mkurugenzi wa Shirika la Kijamii"
+  },
+  {
+    text: "Bidhaa za kitamaduni kutoka A & F Advisory zimeniwezesha kujenga biashara ya kipekee. Msaada wao wa masoko umekuwa muhimu sana.",
+    author: "Daniel O., Mchuuzi wa Bidhaa za Kimaasai"
+  }
+]
 };
 
 export const events = [

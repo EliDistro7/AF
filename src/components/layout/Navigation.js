@@ -13,7 +13,8 @@ import {
   Phone,
   Mail,
   MapPin,
-  ArrowRight
+  ArrowRight,
+  Sparkles
 } from 'lucide-react';
 
 // Mock Link component for demonstration
@@ -39,39 +40,45 @@ export const Navigation = () => {
   const services = [
     {
       title: 'Business Development',
-      description: 'Business planning, analysis, and growth strategies',
+      description: 'Strategic planning, market analysis, and sustainable growth solutions',
       icon: Briefcase,
-      href: '/services/business-development'
+      href: '/services/business-development',
+      color: 'from-blue-500 to-blue-600'
     },
     {
       title: 'Tax Consultancy',
-      description: 'Tax planning, compliance, and optimization',
+      description: 'Comprehensive tax planning, compliance, and optimization strategies',
       icon: Calculator,
-      href: '/services/tax-consultancy'
+      href: '/services/tax-consultancy',
+      color: 'from-emerald-500 to-emerald-600'
     },
     {
       title: 'Financial Planning',
-      description: 'Financial analysis, budgeting, and policy design',
+      description: 'Advanced financial analysis, budgeting, and policy frameworks',
       icon: Users,
-      href: '/services/financial-planning'
+      href: '/services/financial-planning',
+      color: 'from-purple-500 to-purple-600'
     },
     {
       title: 'Skills Training',
-      description: 'Professional development and training programs',
+      description: 'Executive development and specialized training programs',
       icon: GraduationCap,
-      href: '/services/training'
+      href: '/services/training',
+      color: 'from-orange-500 to-orange-600'
     },
     {
       title: 'Cultural Products',
-      description: 'Maasai arts, crafts, and cultural items',
+      description: 'Authentic Maasai arts, crafts, and cultural heritage items',
       icon: Palette,
-      href: '/services/cultural-products'
+      href: '/services/cultural-products',
+      color: 'from-rose-500 to-rose-600'
     },
     {
       title: 'Equipment Trading',
-      description: 'Road building and construction equipment',
+      description: 'Premium road building and construction equipment solutions',
       icon: Truck,
-      href: '/services/equipment'
+      href: '/services/equipment',
+      color: 'from-slate-500 to-slate-600'
     }
   ];
 
@@ -81,82 +88,97 @@ export const Navigation = () => {
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled 
-          ? 'backdrop-blur-xl bg-white/80 border-b border-white/20 shadow-glass-lg' 
-          : 'backdrop-blur-md bg-white/70'
+          ? 'backdrop-blur-2xl bg-white/85 shadow-2xl shadow-slate-900/10 border-b border-slate-200/50' 
+          : 'backdrop-blur-xl bg-white/75'
       }`}>
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between lg:h-20">
+          <div className="flex h-18 items-center justify-between lg:h-24">
             
-            {/* Logo */}
-            <div className="flex items-center space-x-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 shadow-corporate-lg lg:h-12 lg:w-12">
-                <Building2 className="h-6 w-6 text-white lg:h-7 lg:w-7" />
+            {/* Enhanced Logo */}
+            <div className="flex items-center space-x-4">
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-400 via-blue-500 to-indigo-600 rounded-2xl blur-sm opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500 via-blue-600 to-indigo-700 shadow-2xl lg:h-14 lg:w-14 group-hover:scale-105 transition-transform duration-300">
+                  <Building2 className="h-7 w-7 text-white lg:h-8 lg:w-8 drop-shadow-lg" />
+                  <div className="absolute -top-1 -right-1 h-3 w-3 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full opacity-90 animate-pulse"></div>
+                </div>
               </div>
               <div className="hidden sm:block">
-                <h1 className="text-lg font-bold text-text-primary drop-shadow-sm lg:text-xl">
-                  A & F Advisory
-                </h1>
-                <p className="text-xs text-text-tertiary drop-shadow-sm lg:text-sm">
-                  Business Growth Partner
+                <div className="flex items-center space-x-2">
+                  <h1 className="text-xl font-bold bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent lg:text-2xl tracking-tight">
+                    A & F Advisory
+                  </h1>
+                  <span className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded-full border border-blue-200">
+                    Limited
+                  </span>
+                </div>
+                <p className="text-sm text-slate-500 font-medium tracking-wide lg:text-base mt-0.5">
+                  Strategic Business Partners
                 </p>
               </div>
             </div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex lg:items-center lg:space-x-8">
+            {/* Enhanced Desktop Navigation */}
+            <div className="hidden lg:flex lg:items-center lg:space-x-10">
               
-              {/* Home */}
+              {/* Navigation Links */}
               <Link
                 href="/"
-                className="text-text-secondary hover:text-primary-600 transition-colors duration-200 font-medium drop-shadow-sm hover:drop-shadow-md"
+                className="relative text-slate-700 hover:text-blue-600 transition-all duration-300 font-semibold text-base group py-2"
               >
                 Home
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-indigo-600 group-hover:w-full transition-all duration-300 rounded-full"></span>
               </Link>
 
-              {/* About */}
               <Link
                 href="/about"
-                className="text-text-secondary hover:text-primary-600 transition-colors duration-200 font-medium drop-shadow-sm hover:drop-shadow-md"
+                className="relative text-slate-700 hover:text-blue-600 transition-all duration-300 font-semibold text-base group py-2"
               >
                 About Us
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-indigo-600 group-hover:w-full transition-all duration-300 rounded-full"></span>
               </Link>
 
-              {/* Services Dropdown */}
+              {/* Enhanced Services Dropdown */}
               <div className="relative">
                 <button
                   onClick={() => toggleDropdown('services')}
-                  className="flex items-center space-x-1 text-text-secondary hover:text-primary-600 transition-colors duration-200 font-medium drop-shadow-sm hover:drop-shadow-md"
+                  className="relative flex items-center space-x-1 text-slate-700 hover:text-blue-600 transition-all duration-300 font-semibold text-base group py-2"
                 >
                   <span>Services</span>
-                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${
-                    activeDropdown === 'services' ? 'rotate-180' : ''
+                  <ChevronDown className={`h-4 w-4 transition-all duration-300 ${
+                    activeDropdown === 'services' ? 'rotate-180 text-blue-600' : 'group-hover:text-blue-600'
                   }`} />
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-indigo-600 group-hover:w-full transition-all duration-300 rounded-full"></span>
                 </button>
                 
                 {activeDropdown === 'services' && (
-                  <div className="absolute top-full left-0 mt-2 w-96 backdrop-blur-xl bg-white/90 rounded-2xl shadow-glass-lg border border-white/30 overflow-hidden">
-                    <div className="p-4">
-                      <div className="grid gap-3">
+                  <div className="absolute top-full left-0 mt-4 w-[420px] backdrop-blur-2xl bg-white/95 rounded-3xl shadow-2xl shadow-slate-900/20 border border-slate-200/50 overflow-hidden animate-in slide-in-from-top-2 duration-300">
+                    <div className="p-6">
+                      <div className="flex items-center space-x-2 mb-4 pb-3 border-b border-slate-100">
+                        <Sparkles className="h-5 w-5 text-blue-600" />
+                        <h3 className="text-lg font-bold text-slate-800">Our Services</h3>
+                      </div>
+                      <div className="grid gap-2">
                         {services.map((service, index) => (
                           <Link
                             key={index}
                             href={service.href}
-                            className="flex items-start space-x-3 p-3 rounded-lg hover:bg-white/50 backdrop-blur-sm transition-all duration-200 group"
+                            className="flex items-start space-x-4 p-4 rounded-2xl hover:bg-gradient-to-r hover:from-slate-50 hover:to-blue-50/50 transition-all duration-300 group border border-transparent hover:border-blue-100"
                           >
-                            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-50/80 group-hover:bg-primary-100/90 transition-colors duration-200 backdrop-blur-sm">
-                              <service.icon className="h-5 w-5 text-primary-600" />
+                            <div className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${service.color} group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                              <service.icon className="h-6 w-6 text-white drop-shadow-sm" />
                             </div>
                             <div className="flex-1">
-                              <h3 className="text-sm font-semibold text-text-primary group-hover:text-primary-600 transition-colors duration-200 drop-shadow-sm">
+                              <h4 className="text-base font-bold text-slate-800 group-hover:text-blue-700 transition-colors duration-300 mb-1">
                                 {service.title}
-                              </h3>
-                              <p className="text-xs text-text-tertiary mt-1 drop-shadow-sm">
+                              </h4>
+                              <p className="text-sm text-slate-600 leading-relaxed">
                                 {service.description}
                               </p>
                             </div>
-                            <ArrowRight className="h-4 w-4 text-text-light group-hover:text-primary-600 transition-colors duration-200" />
+                            <ArrowRight className="h-5 w-5 text-slate-400 group-hover:text-blue-600 group-hover:translate-x-1 transition-all duration-300" />
                           </Link>
                         ))}
                       </div>
@@ -165,35 +187,39 @@ export const Navigation = () => {
                 )}
               </div>
 
-              {/* Portfolio */}
               <Link
                 href="/portfolio"
-                className="text-text-secondary hover:text-primary-600 transition-colors duration-200 font-medium drop-shadow-sm hover:drop-shadow-md"
+                className="relative text-slate-700 hover:text-blue-600 transition-all duration-300 font-semibold text-base group py-2"
               >
                 Portfolio
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-indigo-600 group-hover:w-full transition-all duration-300 rounded-full"></span>
               </Link>
 
-              {/* Contact Link*/}
               <Link
                 href="/contact"
-                className="text-text-secondary hover:text-primary-600 transition-colors duration-200 font-medium drop-shadow-sm hover:drop-shadow-md"
+                className="relative text-slate-700 hover:text-blue-600 transition-all duration-300 font-semibold text-base group py-2"
               >
                 Contact
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-indigo-600 group-hover:w-full transition-all duration-300 rounded-full"></span>
               </Link>
 
-              {/* CTA Button */}
-              <Link
-                href="/consultation"
-                className="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-2.5 rounded-lg font-medium hover:from-primary-600 hover:to-primary-700 transition-all duration-200 shadow-corporate-lg hover:shadow-corporate-xl transform hover:-translate-y-0.5 backdrop-blur-sm"
-              >
-                Free Consultation
-              </Link>
+              {/* Enhanced CTA Button */}
+              <div className="relative group">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-indigo-600 rounded-2xl blur-sm opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <Link
+                  href="/consultation"
+                  className="relative bg-gradient-to-r from-blue-500 to-indigo-600 text-white px-8 py-3.5 rounded-2xl font-bold text-base hover:from-blue-600 hover:to-indigo-700 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center space-x-2 group-hover:scale-105"
+                >
+                  <span>Free Consultation</span>
+                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                </Link>
+              </div>
             </div>
 
-            {/* Mobile menu button */}
+            {/* Enhanced Mobile menu button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-2 rounded-lg text-text-secondary hover:bg-white/30 backdrop-blur-sm transition-all duration-200 border border-white/20"
+              className="lg:hidden p-3 rounded-2xl text-slate-700 hover:bg-slate-100 backdrop-blur-sm transition-all duration-300 border border-slate-200 hover:border-blue-300 hover:text-blue-600"
             >
               {isOpen ? (
                 <X className="h-6 w-6" />
@@ -204,47 +230,49 @@ export const Navigation = () => {
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Enhanced Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden border-t border-white/30 backdrop-blur-xl bg-white/90">
-            <div className="px-4 py-4 space-y-4">
+          <div className="lg:hidden border-t border-slate-200/50 backdrop-blur-2xl bg-white/95">
+            <div className="px-6 py-6 space-y-6">
               
               {/* Mobile Links */}
               <Link
                 href="/"
-                className="block py-2 text-text-secondary hover:text-primary-600 transition-colors duration-200 font-medium drop-shadow-sm hover:drop-shadow-md"
+                className="block py-3 text-slate-700 hover:text-blue-600 transition-colors duration-300 font-semibold text-lg border-b border-slate-100 hover:border-blue-200"
               >
                 Home
               </Link>
               
               <Link
                 href="/about"
-                className="block py-2 text-text-secondary hover:text-primary-600 transition-colors duration-200 font-medium drop-shadow-sm hover:drop-shadow-md"
+                className="block py-3 text-slate-700 hover:text-blue-600 transition-colors duration-300 font-semibold text-lg border-b border-slate-100 hover:border-blue-200"
               >
                 About Us
               </Link>
 
-              {/* Mobile Services */}
+              {/* Enhanced Mobile Services */}
               <div>
                 <button
                   onClick={() => toggleDropdown('mobile-services')}
-                  className="flex items-center justify-between w-full py-2 text-text-secondary hover:text-primary-600 transition-colors duration-200 font-medium drop-shadow-sm hover:drop-shadow-md"
+                  className="flex items-center justify-between w-full py-3 text-slate-700 hover:text-blue-600 transition-colors duration-300 font-semibold text-lg border-b border-slate-100 hover:border-blue-200"
                 >
                   <span>Services</span>
-                  <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${
-                    activeDropdown === 'mobile-services' ? 'rotate-180' : ''
+                  <ChevronDown className={`h-5 w-5 transition-transform duration-300 ${
+                    activeDropdown === 'mobile-services' ? 'rotate-180 text-blue-600' : ''
                   }`} />
                 </button>
                 
                 {activeDropdown === 'mobile-services' && (
-                  <div className="mt-2 ml-4 space-y-2 backdrop-blur-sm bg-white/30 rounded-lg p-3 border border-white/20">
+                  <div className="mt-4 space-y-3 backdrop-blur-sm bg-gradient-to-r from-slate-50 to-blue-50/30 rounded-2xl p-4 border border-slate-200/50">
                     {services.map((service, index) => (
                       <Link
                         key={index}
                         href={service.href}
-                        className="flex items-center space-x-3 py-2 text-sm text-text-tertiary hover:text-primary-600 transition-colors duration-200 drop-shadow-sm hover:drop-shadow-md"
+                        className="flex items-center space-x-4 py-3 text-slate-600 hover:text-blue-600 transition-colors duration-300 font-medium"
                       >
-                        <service.icon className="h-4 w-4" />
+                        <div className={`flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${service.color} shadow-md`}>
+                          <service.icon className="h-5 w-5 text-white" />
+                        </div>
                         <span>{service.title}</span>
                       </Link>
                     ))}
@@ -254,41 +282,49 @@ export const Navigation = () => {
 
               <Link
                 href="/portfolio"
-                className="block py-2 text-text-secondary hover:text-primary-600 transition-colors duration-200 font-medium drop-shadow-sm hover:drop-shadow-md"
+                className="block py-3 text-slate-700 hover:text-blue-600 transition-colors duration-300 font-semibold text-lg border-b border-slate-100 hover:border-blue-200"
               >
                 Portfolio
               </Link>
 
               <Link
                 href="/contact"
-                className="block py-2 text-text-secondary hover:text-primary-600 transition-colors duration-200 font-medium drop-shadow-sm hover:drop-shadow-md"
+                className="block py-3 text-slate-700 hover:text-blue-600 transition-colors duration-300 font-semibold text-lg border-b border-slate-100 hover:border-blue-200"
               >
                 Contact
               </Link>
 
-              {/* Mobile CTA */}
-              <div className="pt-4 border-t border-white/30">
+              {/* Enhanced Mobile CTA */}
+              <div className="pt-4">
                 <Link
                   href="/consultation"
-                  className="block w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white text-center px-6 py-3 rounded-lg font-medium hover:from-primary-600 hover:to-primary-700 transition-all duration-200 shadow-corporate-lg backdrop-blur-sm"
+                  className="block w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-center px-8 py-4 rounded-2xl font-bold text-lg hover:from-blue-600 hover:to-indigo-700 transition-all duration-300 shadow-xl flex items-center justify-center space-x-2"
                 >
-                  Free Consultation
+                  <span>Free Consultation</span>
+                  <ArrowRight className="h-5 w-5" />
                 </Link>
               </div>
 
-              {/* Contact Info */}
-              <div className="pt-4 border-t border-white/30 space-y-3 backdrop-blur-sm bg-white/20 rounded-lg p-4 border border-white/20">
-                <div className="flex items-center space-x-3 text-sm text-text-tertiary drop-shadow-sm">
-                  <MapPin className="h-4 w-4" />
-                  <span>Dar es Salaam, Tanzania</span>
+              {/* Enhanced Contact Info */}
+              <div className="pt-6 border-t border-slate-200 space-y-4 backdrop-blur-sm bg-gradient-to-r from-slate-50 to-blue-50/30 rounded-2xl p-5 border border-slate-200/50">
+                <h4 className="text-lg font-bold text-slate-800 mb-3">Get in Touch</h4>
+                <div className="flex items-center space-x-4 text-slate-600">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-slate-100 to-slate-200">
+                    <MapPin className="h-5 w-5 text-slate-600" />
+                  </div>
+                  <span className="font-medium">Dar es Salaam, Tanzania</span>
                 </div>
-                <div className="flex items-center space-x-3 text-sm text-text-tertiary drop-shadow-sm">
-                  <Phone className="h-4 w-4" />
-                  <span>+255 XXX XXX XXX</span>
+                <div className="flex items-center space-x-4 text-slate-600">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-green-100 to-green-200">
+                    <Phone className="h-5 w-5 text-green-600" />
+                  </div>
+                  <span className="font-medium">+255 XXX XXX XXX</span>
                 </div>
-                <div className="flex items-center space-x-3 text-sm text-text-tertiary drop-shadow-sm">
-                  <Mail className="h-4 w-4" />
-                  <span>info@afadvisory.co.tz</span>
+                <div className="flex items-center space-x-4 text-slate-600">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-100 to-blue-200">
+                    <Mail className="h-5 w-5 text-blue-600" />
+                  </div>
+                  <span className="font-medium">info@afadvisory.co.tz</span>
                 </div>
               </div>
             </div>
@@ -296,10 +332,10 @@ export const Navigation = () => {
         )}
       </nav>
 
-      {/* Backdrop for dropdowns */}
+      {/* Enhanced Backdrop */}
       {activeDropdown && (
         <div 
-          className="fixed inset-0 z-40 backdrop-blur-sm bg-black/10 lg:block hidden"
+          className="fixed inset-0 z-40 backdrop-blur-sm bg-slate-900/20 lg:block hidden transition-opacity duration-300"
           onClick={() => setActiveDropdown(null)}
         />
       )}
