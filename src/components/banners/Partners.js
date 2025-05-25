@@ -150,7 +150,7 @@ const PartnersShowcase = () => {
               <div className="relative overflow-hidden rounded-2xl shadow-corporate-lg group-hover:shadow-corporate-xl transition-all duration-300">
                 {/* Photo Placeholder - Replace with your actual image */}
                <img 
-                  src="/partners.jpg" 
+                  src="/partners.jpeg" 
                   alt="Team collaboration" 
                   className="w-full h-full object-cover"
                 />
