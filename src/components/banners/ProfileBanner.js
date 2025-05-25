@@ -1,29 +1,29 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Star, Users, Globe, Award, Sparkles, ChevronRight } from 'lucide-react';
-import Image from 'next/image';
+import { Star, Users, Globe, Award, Sparkles, ChevronRight, Building, TrendingUp, Briefcase, Target } from 'lucide-react';
 
-const ProfileBanner = ({ speaker, language = 'en' }) => {
+const ProfileBanner = ({ language = 'en' }) => {
   const translations = {
     en: {
-      transformingLeaders: 'Transforming Leaders',
-      worldwide: 'Worldwide',
-      experienceExcellence: 'Experience Excellence in Leadership',
-      bookNow: 'Book Speaking Engagement',
-      totalSpeaks: 'Speaking Events',
+      transformingBusiness: 'Transforming Businesses',
+      across: 'Across Tanzania',
+      experienceExcellence: 'Your Business Clinic for Growth & Success',
+      bookNow: 'Get Consultation',
+      totalClients: 'Businesses Served',
       yearsExperience: 'Years Experience',
-      clientsSatisfied: 'Clients Satisfied',
-      countriesReached: 'Countries Reached'
+      servicesOffered: 'Services Offered',
+      successRate: 'Success Rate',
+      tagline: 'Business Development • Consultancy • Training • Equipment Solutions'
     },
     sw: {
-      transformingLeaders: 'Kubadilisha Viongozi',
-      worldwide: 'Ulimwenguni',
-      experienceExcellence: 'Pata Ubora katika Uongozi',
-      bookNow: 'Weka Mazungumzo',
-      totalSpeaks: 'Matukio ya Mazungumzo',
+      transformingBusiness: 'Kubadilisha Biashara',
+      across: 'Nchini Tanzania',
+      experienceExcellence: 'Kliniki yako ya Biashara kwa Ukuaji na Mafanikio',
+      bookNow: 'Pata Ushauri',
+      totalClients: 'Biashara Zilizotumikiwa',
       yearsExperience: 'Miaka ya Uzoefu',
-      clientsSatisfied: 'Wateja Waliordhishwa',
-      countriesReached: 'Nchi Zilizofikwa'
+      servicesOffered: 'Huduma Zinazopatikana',
+      successRate: 'Kiwango cha Mafanikio',
+      tagline: 'Maendeleo ya Biashara • Ushauri • Mafunzo • Suluhisho za Vifaa'
     }
   };
 
@@ -66,10 +66,19 @@ const ProfileBanner = ({ speaker, language = 'en' }) => {
   };
 
   const stats = [
-    { icon: Users, value: speaker?.totalSpeaks || 247, label: t.totalSpeaks },
-    { icon: Award, value: '15+', label: t.yearsExperience },
-    { icon: Star, value: '500+', label: t.clientsSatisfied },
-    { icon: Globe, value: '25+', label: t.countriesReached }
+    { icon: Users, value: '500+', label: t.totalClients },
+    { icon: TrendingUp, value: '10+', label: t.yearsExperience },
+    { icon: Briefcase, value: '13+', label: t.servicesOffered },
+    { icon: Target, value: '95%', label: t.successRate }
+  ];
+
+  const services = [
+    'Business Development',
+    'Financial Planning',
+    'Tax Consultancy',
+    'Training Programs',
+    'Equipment Solutions',
+    'Labor Market Linking'
   ];
 
   return (
@@ -77,56 +86,33 @@ const ProfileBanner = ({ speaker, language = 'en' }) => {
       {/* Background with gradient mesh */}
       <div className="absolute inset-0">
         {/* Base gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-900" />
+        <div className="absolute inset-0 bg-gradient-to-br from-emerald-600 via-teal-700 to-blue-900" />
         
         {/* Animated gradient orbs */}
-        <motion.div
-          className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-r from-cyan-400/30 to-blue-400/30 rounded-full blur-3xl"
-          animate={{
-            x: [0, 50, -30, 0],
-            y: [0, -30, 20, 0],
-            scale: [1, 1.2, 0.8, 1]
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "easeInOut"
+        <div
+          className="absolute -top-40 -left-40 w-80 h-80 bg-gradient-to-r from-emerald-400/30 to-teal-400/30 rounded-full blur-3xl animate-pulse"
+          style={{
+            animation: 'float 20s ease-in-out infinite'
           }}
         />
         
-        <motion.div
-          className="absolute -bottom-40 -right-40 w-80 h-80 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl"
-          animate={{
-            x: [0, -40, 30, 0],
-            y: [0, 30, -20, 0],
-            scale: [1, 0.9, 1.1, 1]
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "easeInOut"
+        <div
+          className="absolute -bottom-40 -right-40 w-80 h-80 bg-gradient-to-r from-teal-500/20 to-blue-500/20 rounded-full blur-3xl"
+          style={{
+            animation: 'float 25s ease-in-out infinite reverse'
           }}
         />
 
         {/* Floating particles */}
         {Array.from({ length: 15 }).map((_, i) => (
-          <motion.div
+          <div
             key={i}
-            className="absolute w-2 h-2 bg-white/20 rounded-full"
+            className="absolute w-2 h-2 bg-white/20 rounded-full animate-pulse"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -20, 0],
-              opacity: [0.3, 0.8, 0.3],
-              scale: [1, 1.5, 1]
-            }}
-            transition={{
-              duration: Math.random() * 4 + 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: Math.random() * 2
+              animationDelay: `${Math.random() * 2}s`,
+              animationDuration: `${Math.random() * 4 + 3}s`
             }}
           />
         ))}
@@ -140,164 +126,132 @@ const ProfileBanner = ({ speaker, language = 'en' }) => {
         />
       </div>
 
-      <motion.div
-        className="relative z-10 px-6 py-16 lg:py-24"
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
-      >
+      <div className="relative z-10 px-6 py-16 lg:py-24">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             
             {/* Left Content */}
-            <motion.div variants={itemVariants} className="text-white space-y-8">
+            <div className="text-white space-y-8">
               {/* Badge */}
-              <motion.div
-                className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <Sparkles className="w-5 h-5 text-cyan-300" />
-                <span className="text-sm font-semibold text-cyan-100">
-                  {t.transformingLeaders} • {t.worldwide}
+              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 hover:scale-105 transition-transform">
+                <Sparkles className="w-5 h-5 text-emerald-300" />
+                <span className="text-sm font-semibold text-emerald-100">
+                  {t.transformingBusiness} • {t.across}
                 </span>
-              </motion.div>
+              </div>
 
               {/* Main heading */}
               <div className="space-y-4">
-                <motion.h1 
-                  className="text-4xl lg:text-6xl xl:text-7xl font-bold leading-tight"
-                  variants={itemVariants}
-                >
-                  <span className="block text-white">Dr. James</span>
-                  <span className="block bg-gradient-to-r from-cyan-300 via-cyan-200 to-white bg-clip-text text-transparent">
-                    Mwangamba
+                <h1 className="text-4xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+                  <span className="block text-white">A & F</span>
+                  <span className="block bg-gradient-to-r from-emerald-300 via-teal-200 to-white bg-clip-text text-transparent">
+                    ADVISORY
                   </span>
-                </motion.h1>
+                  <span className="block text-2xl lg:text-3xl xl:text-4xl text-emerald-200 font-medium mt-2">
+                    LIMITED
+                  </span>
+                </h1>
                 
-                <motion.p 
-                  className="text-xl lg:text-2xl text-blue-100 font-medium"
-                  variants={itemVariants}
-                >
-                  {speaker?.title || (language === 'en' 
-                    ? "Business & Life Coach, International Speaker & Entrepreneur"
-                    : "Kocha wa Biashara na Maisha, Mzungumzaji wa Kimataifa na Mfanyabiashara"
-                  )}
-                </motion.p>
+                <p className="text-xl lg:text-2xl text-teal-100 font-medium">
+                  {t.tagline}
+                </p>
               </div>
 
               {/* Description */}
-              <motion.p 
-                className="text-lg text-blue-200 leading-relaxed max-w-lg"
-                variants={itemVariants}
-              >
-                {t.experienceExcellence}
-              </motion.p>
+              <p className="text-lg text-teal-200 leading-relaxed max-w-lg">
+                {t.experienceExcellence}. We serve as your business clinic for micro, small, and medium enterprises as well as public sector organizations.
+              </p>
+
+              {/* Services List */}
+              <div className="grid grid-cols-2 gap-2 text-sm">
+                {services.map((service, index) => (
+                  <div key={index} className="flex items-center space-x-2 text-teal-100">
+                    <div className="w-2 h-2 bg-emerald-400 rounded-full"></div>
+                    <span>{service}</span>
+                  </div>
+                ))}
+              </div>
 
               {/* CTA Button */}
-              <motion.button
-                className="group bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-600 hover:to-cyan-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center space-x-3"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                variants={itemVariants}
-              >
+              <button className="group bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center space-x-3 hover:scale-105 hover:-translate-y-1">
                 <span>{t.bookNow}</span>
-                <motion.div
-                  className="group-hover:translate-x-1 transition-transform duration-300"
-                >
+                <div className="group-hover:translate-x-1 transition-transform duration-300">
                   <ChevronRight className="w-5 h-5" />
-                </motion.div>
-              </motion.button>
+                </div>
+              </button>
 
               {/* Stats Row */}
-              <motion.div 
-                className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-8"
-                variants={itemVariants}
-              >
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-8">
                 {stats.map((stat, index) => (
-                  <motion.div
+                  <div
                     key={index}
-                    className="text-center"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ type: "spring", stiffness: 300 }}
+                    className="text-center hover:scale-105 transition-transform"
                   >
                     <div className="flex justify-center mb-2">
                       <div className="p-3 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20">
-                        <stat.icon className="w-6 h-6 text-cyan-300" />
+                        <stat.icon className="w-6 h-6 text-emerald-300" />
                       </div>
                     </div>
                     <div className="text-2xl font-bold text-white mb-1">
                       {stat.value}
                     </div>
-                    <div className="text-sm text-blue-200">
+                    <div className="text-sm text-teal-200">
                       {stat.label}
                     </div>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </motion.div>
-
-            {/* Right Image */}
-            <motion.div 
-              className="relative"
-              variants={itemVariants}
-            >
-              <div className="relative">
-                {/* Main image container */}
-                <motion.div
-                  className="relative z-10"
-                  variants={floatingVariants}
-                  animate="animate"
-                >
-                  <div className="aspect-[4/5] rounded-3xl overflow-hidden bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm border border-white/20 p-4">
-                 {/* Image holder with banner.jpg */}
-<div className="w-full h-full rounded-2xl bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center overflow-hidden">
-  <Image 
-    src="/banner2.jpg" 
-    alt="Speaker Photo" 
-    fill
-    className="object-cover rounded-2xl"
-  />
-</div>
                   </div>
-                </motion.div>
+                ))}
+              </div>
+            </div>
+
+            {/* Right Visual */}
+            <div className="relative">
+              <div className="relative">
+                {/* Main visual container */}
+                <div className="relative z-10">
+                  <div className="aspect-[4/5] rounded-3xl overflow-hidden bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm border border-white/20 p-6">
+                    {/* Business visualization */}
+                    <div className="w-full h-full rounded-2xl bg-gradient-to-br from-emerald-100/20 to-teal-100/20 flex flex-col items-center justify-center space-y-8">
+                      
+                      {/* Central logo/icon */}
+                      <div className="relative">
+                        <div className="w-24 h-24 bg-gradient-to-br from-emerald-400 to-teal-600 rounded-2xl flex items-center justify-center shadow-2xl">
+                          <Building className="w-12 h-12 text-white" />
+                        </div>
+                        <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center">
+                          <Award className="w-4 h-4 text-yellow-800" />
+                        </div>
+                      </div>
+
+                      {/* Service icons */}
+                      <div className="grid grid-cols-3 gap-4 w-full max-w-xs">
+                        {[
+                          { icon: TrendingUp, label: 'Growth' },
+                          { icon: Users, label: 'Training' },
+                          { icon: Target, label: 'Strategy' },
+                          { icon: Briefcase, label: 'Consulting' },
+                          { icon: Globe, label: 'Export/Import' },
+                          { icon: Star, label: 'Quality' }
+                        ].map((item, index) => (
+                          <div 
+                            key={index}
+                            className="flex flex-col items-center space-y-2 p-3 bg-white/10 rounded-lg backdrop-blur-sm hover:bg-white/20 transition-all"
+                          >
+                            <item.icon className="w-6 h-6 text-emerald-300" />
+                            <span className="text-xs text-white font-medium">{item.label}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 {/* Decorative elements */}
-                <motion.div
-                  className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-cyan-400/30 to-cyan-600/30 rounded-full blur-xl"
-                  animate={{
-                    scale: [1, 1.2, 1],
-                    opacity: [0.3, 0.6, 0.3]
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "easeInOut"
-                  }}
-                />
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-emerald-400/30 to-teal-600/30 rounded-full blur-xl animate-pulse" />
                 
-                <motion.div
-                  className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-blue-600/20 rounded-full blur-xl"
-                  animate={{
-                    scale: [1, 1.1, 1],
-                    opacity: [0.2, 0.4, 0.2]
-                  }}
-                  transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: 1
-                  }}
-                />
+                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-teal-400/20 to-blue-600/20 rounded-full blur-xl animate-pulse" />
 
-                {/* Rating badge */}
-                <motion.div
-                  className="absolute top-6 -left-6 bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-white/50"
-                  initial={{ scale: 0, rotate: -10 }}
-                  animate={{ scale: 1, rotate: 0 }}
-                  transition={{ delay: 1, type: "spring", stiffness: 200 }}
-                  whileHover={{ scale: 1.05, rotate: 2 }}
-                >
+                {/* Achievement badge */}
+                <div className="absolute top-6 -left-6 bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-white/50 hover:scale-105 transition-transform">
                   <div className="flex items-center space-x-2">
                     <div className="flex">
                       {[...Array(5)].map((_, i) => (
@@ -308,38 +262,40 @@ const ProfileBanner = ({ speaker, language = 'en' }) => {
                       ))}
                     </div>
                     <span className="text-sm font-bold text-gray-800">
-                      {speaker?.rating || 4.9}
+                      4.9
                     </span>
                   </div>
                   <p className="text-xs text-gray-600 mt-1">
-                    500+ Reviews
+                    Trusted Partner
                   </p>
-                </motion.div>
+                </div>
 
-                {/* Achievement badge */}
-                <motion.div
-                  className="absolute bottom-6 -right-6 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-2xl p-4 shadow-xl"
-                  initial={{ scale: 0, rotate: 10 }}
-                  animate={{ scale: 1, rotate: 0 }}
-                  transition={{ delay: 1.2, type: "spring", stiffness: 200 }}
-                  whileHover={{ scale: 1.05, rotate: -2 }}
-                >
-                  <Award className="w-6 h-6 mb-2 mx-auto" />
+                {/* Tanzania badge */}
+                <div className="absolute bottom-6 -right-6 bg-gradient-to-r from-green-600 to-yellow-500 text-white rounded-2xl p-4 shadow-xl hover:scale-105 transition-transform">
+                  <Globe className="w-6 h-6 mb-2 mx-auto" />
                   <p className="text-xs font-semibold text-center">
-                    Top Speaker
+                    Tanzania
                   </p>
                   <p className="text-xs opacity-90 text-center">
-                    2024
+                    Registered
                   </p>
-                </motion.div>
+                </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Bottom gradient fade */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white/10 to-transparent pointer-events-none" />
+      
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          33% { transform: translateY(-10px) rotate(1deg); }
+          66% { transform: translateY(5px) rotate(-1deg); }
+        }
+      `}</style>
     </div>
   );
 };

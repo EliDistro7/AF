@@ -9,7 +9,7 @@ import { Card } from '@/components/ui/Card';
 import { SpeakerBio } from '@/components/speaker/SpeakerBio';
 import { ContactInfo } from '@/components/speaker/ContactInfo';
 import { SpecialtiesList } from '@/components/speaker/Specialties';
-import { SpeakerHeader } from '@/components/speaker/SpeakerHeader';
+import { CompanyHeader as SpeakerHeader } from '@/components/speaker/SpeakerHeader';
 import { TestimonialsSection } from '@/components/speaker/TestimonialSection';  
 import { EventsList } from '@/components/events/EventList';
 import { TicketsList } from '@/components/tickets/TicketList';
@@ -234,11 +234,11 @@ const Main = () => {
         />
       </motion.div>
 
-      {/* Profile Banner - only show on profile view 
+      {/* Profile Banner - only show on profile view */}
       {currentView === 'profile' && (
         <ProfileBanner speaker={speaker} language={language}/>
       )}
-        */}
+       
 
       {/* Hero Section - only show on profile view */}
       {currentView === 'profile' && (
@@ -316,7 +316,7 @@ const Main = () => {
               className="space-y-8"
             >
               <Card padding="p-0" className="overflow-hidden backdrop-blur-sm bg-white/90 border-white/20 shadow-2xl">
-                <SpeakerHeader speaker={speaker} />
+             
                 <div className="p-8">
                  {/* <SpeakerBio bio={speaker.bio} /> */}
                   <div className="grid md:grid-cols-2 gap-8 mt-8">
