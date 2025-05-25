@@ -1,8 +1,59 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useLanguage } from '@/contexts/language';
+
+const translations = {
+  en: {
+    trustedBy: 'Trusted by Industry Leaders',
+    trustedByDescription: 'We\'ve partnered with innovative companies across industries to deliver exceptional results and drive digital transformation.',
+    projectsCompleted: 'Projects Completed',
+    clientSatisfaction: 'Client Satisfaction', 
+    partnerCompanies: 'Partner Companies',
+    industryExperience: 'Industry Experience',
+    ourPartnerNetwork: 'Our Partner Network',
+    partnerNetworkDescription: 'Companies that trust us to deliver innovative solutions',
+    readyToJoin: 'Ready to Join Our Success Stories?',
+    readyToJoinDescription: 'Let\'s discuss how we can help your business achieve its goals with our proven expertise.',
+    startProject: 'Start Your Project',
+    digitalTransformation: 'Digital Transformation',
+    financialSolutions: 'Financial Solutions',
+    innovationHub: 'Innovation Hub',
+    cloudServices: 'Cloud Services',
+    analyticsPlatform: 'Analytics Platform',
+    cybersecurity: 'Cybersecurity',
+    aiSolutions: 'AI Solutions',
+    blockchainTech: 'Blockchain Tech',
+    years: 'Years'
+  },
+  sw: {
+    trustedBy: 'Tunaminiwa na Viongozi wa Tasnia',
+    trustedByDescription: 'Tumeshirikiana na makampuni ya ubunifu katika tasnia mbalimbali kutoa matokeo ya kipekee na kuendesha mabadiliko ya kidijitali.',
+    projectsCompleted: 'Miradi Iliyokamilika',
+    clientSatisfaction: 'Kuridhika kwa Wateja',
+    partnerCompanies: 'Makampuni Washirika',
+    industryExperience: 'Uzoefu wa Sekta',
+    ourPartnerNetwork: 'Mtandao Wetu wa Washirika',
+    partnerNetworkDescription: 'Makampuni yanayotuamini kutoa suluhisho za ubunifu',
+    readyToJoin: 'Uko Tayari Kujiunga na Hadithi Zetu za Mafanikio?',
+    readyToJoinDescription: 'Hebu tujadili jinsi tuwezavyo kusaidia biashara yako kufikia malengo yake kwa uzoefu wetu uliojaribiwa.',
+    startProject: 'Anza Mradi Wako',
+    digitalTransformation: 'Mabadiliko ya Kidijitali',
+    financialSolutions: 'Suluhisho za Kifedha',
+    innovationHub: 'Kituo cha Ubunifu',
+    cloudServices: 'Huduma za Wingu',
+    analyticsPlatform: 'Jukwaa la Uchambuzi',
+    cybersecurity: 'Ulinzi wa Mtandao',
+    aiSolutions: 'Suluhisho za AI',
+    blockchainTech: 'Teknolojia ya Blockchain',
+    years: 'Miaka'
+  }
+};
 
 const PartnersShowcase = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
+  
   const { ref, inView } = useInView({
     threshold: 0.1,
     triggerOnce: true
@@ -10,22 +61,22 @@ const PartnersShowcase = () => {
 
   // Mock partner data - replace with your actual partner brands
   const partners = [
-    { id: 1, name: 'TechCorp', logo: 'TC', description: 'Digital Transformation' },
-    { id: 2, name: 'GlobalFinance', logo: 'GF', description: 'Financial Solutions' },
-    { id: 3, name: 'InnovateLab', logo: 'IL', description: 'Innovation Hub' },
-    { id: 4, name: 'CloudFirst', logo: 'CF', description: 'Cloud Services' },
-    { id: 5, name: 'DataDriven', logo: 'DD', description: 'Analytics Platform' },
-    { id: 6, name: 'SecureNet', logo: 'SN', description: 'Cybersecurity' },
-    { id: 7, name: 'AI Dynamics', logo: 'AD', description: 'AI Solutions' },
-    { id: 8, name: 'BlockChain Pro', logo: 'BP', description: 'Blockchain Tech' },
+    { id: 1, name: 'TechCorp', logo: 'TC', description: t.digitalTransformation },
+    { id: 2, name: 'GlobalFinance', logo: 'GF', description: t.financialSolutions },
+    { id: 3, name: 'InnovateLab', logo: 'IL', description: t.innovationHub },
+    { id: 4, name: 'CloudFirst', logo: 'CF', description: t.cloudServices },
+    { id: 5, name: 'DataDriven', logo: 'DD', description: t.analyticsPlatform },
+    { id: 6, name: 'SecureNet', logo: 'SN', description: t.cybersecurity },
+    { id: 7, name: 'AI Dynamics', logo: 'AD', description: t.aiSolutions },
+    { id: 8, name: 'BlockChain Pro', logo: 'BP', description: t.blockchainTech },
   ];
 
   // Track record stats
   const trackRecord = [
-    { value: '150+', label: 'Projects Completed', icon: '🎯' },
-    { value: '98%', label: 'Client Satisfaction', icon: '⭐' },
-    { value: '50+', label: 'Partner Companies', icon: '🤝' },
-    { value: '5 Years', label: 'Industry Experience', icon: '📈' },
+    { value: '150+', label: t.projectsCompleted, icon: '🎯' },
+    { value: '98%', label: t.clientSatisfaction, icon: '⭐' },
+    { value: '50+', label: t.partnerCompanies, icon: '🤝' },
+    { value: `5 ${t.years}`, label: t.industryExperience, icon: '📈' },
   ];
 
   // Duplicate partners array for seamless infinite scroll
@@ -42,11 +93,10 @@ const PartnersShowcase = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl lg:text-5xl font-bold text-text-primary mb-6 text-shadow">
-            Trusted by Industry Leaders
+            {t.trustedBy}
           </h2>
           <p className="text-xl text-text-secondary max-w-3xl mx-auto leading-relaxed">
-            We've partnered with innovative companies across industries to deliver 
-            exceptional results and drive digital transformation.
+            {t.trustedByDescription}
           </p>
         </motion.div>
 
@@ -86,10 +136,10 @@ const PartnersShowcase = () => {
           className="text-center mb-12"
         >
           <h3 className="text-2xl lg:text-3xl font-bold text-text-primary mb-4">
-            Our Partner Network
+            {t.ourPartnerNetwork}
           </h3>
           <p className="text-text-secondary max-w-2xl mx-auto">
-            Companies that trust us to deliver innovative solutions
+            {t.partnerNetworkDescription}
           </p>
         </motion.div>
 
@@ -153,17 +203,17 @@ const PartnersShowcase = () => {
         >
           <div className="bg-background-primary/50 backdrop-blur-md border border-corporate/30 rounded-2xl p-8 max-w-2xl mx-auto shadow-corporate-lg">
             <h4 className="text-2xl font-bold text-text-primary mb-4">
-              Ready to Join Our Success Stories?
+              {t.readyToJoin}
             </h4>
             <p className="text-text-secondary mb-6 leading-relaxed">
-              Let's discuss how we can help your business achieve its goals with our proven expertise.
+              {t.readyToJoinDescription}
             </p>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-gradient-to-r from-primary-600 to-accent-600 text-white px-8 py-4 rounded-xl font-semibold shadow-corporate-lg hover:shadow-corporate-xl transition-all duration-300"
             >
-              Start Your Project
+              {t.startProject}
             </motion.button>
           </div>
         </motion.div>
