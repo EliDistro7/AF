@@ -14,7 +14,8 @@ import {
   Mail,
   MapPin,
   ArrowRight,
-  Sparkles
+  Sparkles,
+  Globe
 } from 'lucide-react';
 
 // Mock Link component for demonstration
@@ -24,10 +25,17 @@ const Link = ({ href, children, className, ...props }) => (
   </a>
 );
 
+// Mock useLanguage hook for demonstration
+const useLanguage = () => {
+  const [language, setLanguage] = useState('sw');
+  return { language, setLanguage };
+};
+
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [scrolled, setScrolled] = useState(false);
+  const { language, setLanguage } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -86,6 +94,30 @@ export const Navigation = () => {
     setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
   };
 
+  const handleLanguageToggle = () => {
+    setLanguage(language === 'en' ? 'sw' : 'en');
+  };
+
+  const LanguageToggle = ({ className = "" }) => (
+    <button
+      onClick={handleLanguageToggle}
+      className={`relative flex items-center space-x-2 px-4 py-2.5 rounded-2xl transition-all duration-300 group border-2 font-semibold ${
+        language === 'en' 
+          ? 'bg-gradient-to-r from-blue-500 to-indigo-600 text-white border-transparent shadow-lg hover:shadow-xl transform hover:-translate-y-0.5' 
+          : 'bg-white text-slate-700 border-slate-200 hover:border-blue-300 hover:text-blue-600 shadow-md hover:shadow-lg'
+      } ${className}`}
+      title={language === 'en' ? 'Switch to Swahili' : 'Switch to English'}
+    >
+      <Globe className="h-4 w-4" />
+      <span className="text-sm font-bold tracking-wide">
+        {language === 'en' ? 'EN' : 'SW'}
+      </span>
+      <div className={`absolute -top-1 -right-1 h-2.5 w-2.5 rounded-full transition-opacity duration-300 ${
+        language === 'en' ? 'bg-yellow-400 opacity-90' : 'bg-green-500 opacity-75'
+      }`} />
+    </button>
+  );
+
   return (
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
@@ -121,7 +153,10 @@ export const Navigation = () => {
             </div>
 
             {/* Enhanced Desktop Navigation */}
-            <div className="hidden lg:flex lg:items-center lg:space-x-10">
+            <div className="hidden lg:flex lg:items-center lg:space-x-8">
+              
+              {/* Language Toggle - Desktop */}
+              <LanguageToggle />
               
               {/* Navigation Links */}
               <Link
@@ -217,16 +252,21 @@ export const Navigation = () => {
             </div>
 
             {/* Enhanced Mobile menu button */}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden p-3 rounded-2xl text-slate-700 hover:bg-slate-100 backdrop-blur-sm transition-all duration-300 border border-slate-200 hover:border-blue-300 hover:text-blue-600"
-            >
-              {isOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
-            </button>
+            <div className="flex items-center space-x-3 lg:hidden">
+              {/* Language Toggle - Mobile */}
+              <LanguageToggle className="scale-90" />
+              
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="p-3 rounded-2xl text-slate-700 hover:bg-slate-100 backdrop-blur-sm transition-all duration-300 border border-slate-200 hover:border-blue-300 hover:text-blue-600"
+              >
+                {isOpen ? (
+                  <X className="h-6 w-6" />
+                ) : (
+                  <Menu className="h-6 w-6" />
+                )}
+              </button>
+            </div>
           </div>
         </div>
 
