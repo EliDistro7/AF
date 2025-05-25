@@ -101,20 +101,20 @@ export const Navigation = () => {
             <div className="hidden lg:flex lg:items-center lg:space-x-8">
               
               {/* Home */}
-              <a
+              <Link
                 href="/"
                 className="text-neutral-700 hover:text-primary-600 transition-colors duration-200 font-medium"
               >
                 Home
-              </a>
+              </Link>
 
               {/* About */}
-              <a
+              <Link
                 href="/about"
                 className="text-neutral-700 hover:text-primary-600 transition-colors duration-200 font-medium"
               >
                 About Us
-              </a>
+              </Link>
 
               {/* Services Dropdown */}
               <div className="relative">
@@ -133,7 +133,7 @@ export const Navigation = () => {
                     <div className="p-4">
                       <div className="grid gap-3">
                         {services.map((service, index) => (
-                          <a
+                          <Link
                             key={index}
                             href={service.href}
                             className="flex items-start space-x-3 p-3 rounded-lg hover:bg-neutral-50 transition-colors duration-200 group"
@@ -150,7 +150,7 @@ export const Navigation = () => {
                               </p>
                             </div>
                             <ArrowRight className="h-4 w-4 text-neutral-400 group-hover:text-primary-600 transition-colors duration-200" />
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     </div>
@@ -159,28 +159,28 @@ export const Navigation = () => {
               </div>
 
               {/* Portfolio */}
-              <a
+              <Link
                 href="/portfolio"
                 className="text-neutral-700 hover:text-primary-600 transition-colors duration-200 font-medium"
               >
                 Portfolio
-              </a>
+              </Link>
 
-              {/* Contact */}
-              <a
+              {/* Contact Link*/}
+              <Link
                 href="/contact"
                 className="text-neutral-700 hover:text-primary-600 transition-colors duration-200 font-medium"
               >
                 Contact
-              </a>
+              </Link>
 
               {/* CTA Button */}
-              <a
+              <Link
                 href="/consultation"
                 className="bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-2.5 rounded-lg font-medium hover:from-primary-600 hover:to-primary-700 transition-all duration-200 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
               >
                 Free Consultation
-              </a>
+              </Link>
             </div>
 
             {/* Mobile menu button */}
@@ -203,19 +203,19 @@ export const Navigation = () => {
             <div className="px-4 py-4 space-y-4">
               
               {/* Mobile Links */}
-              <a
+              <Link
                 href="/"
                 className="block py-2 text-neutral-700 hover:text-primary-600 transition-colors duration-200 font-medium"
               >
                 Home
-              </a>
+              </Link>
               
-              <a
+              <Link
                 href="/about"
                 className="block py-2 text-neutral-700 hover:text-primary-600 transition-colors duration-200 font-medium"
               >
                 About Us
-              </a>
+              </Link>
 
               {/* Mobile Services */}
               <div>
@@ -232,41 +232,41 @@ export const Navigation = () => {
                 {activeDropdown === 'mobile-services' && (
                   <div className="mt-2 ml-4 space-y-2">
                     {services.map((service, index) => (
-                      <a
+                      <Link
                         key={index}
                         href={service.href}
                         className="flex items-center space-x-3 py-2 text-sm text-neutral-600 hover:text-primary-600 transition-colors duration-200"
                       >
                         <service.icon className="h-4 w-4" />
                         <span>{service.title}</span>
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 )}
               </div>
 
-              <a
+              <Link
                 href="/portfolio"
                 className="block py-2 text-neutral-700 hover:text-primary-600 transition-colors duration-200 font-medium"
               >
                 Portfolio
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/contact"
                 className="block py-2 text-neutral-700 hover:text-primary-600 transition-colors duration-200 font-medium"
               >
                 Contact
-              </a>
+              </Link>
 
               {/* Mobile CTA */}
               <div className="pt-4 border-t border-neutral-200">
-                <a
+                <Link
                   href="/consultation"
                   className="block w-full bg-gradient-to-r from-primary-500 to-primary-600 text-white text-center px-6 py-3 rounded-lg font-medium hover:from-primary-600 hover:to-primary-700 transition-all duration-200 shadow-md"
                 >
                   Free Consultation
-                </a>
+                </Link>
               </div>
 
               {/* Contact Info */}
